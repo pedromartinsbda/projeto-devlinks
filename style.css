@@ -30,7 +30,7 @@ body {
 }
 
 body * {
-  font-family: 'inter', sans-serif;
+  font-family: "inter", sans-serif;
   color: var(--text-color);
 }
 
@@ -39,7 +39,7 @@ body * {
   max-width: 588px;
   margin: 56px auto 0px;
   padding: 0 24px;
-} 
+}
 
 /* profile */
 #profile {
@@ -48,7 +48,7 @@ body * {
 }
 
 #profile img {
-  width:112px;
+  width: 112px;
 }
 
 #profile p {
@@ -77,11 +77,16 @@ body * {
   left: 0;
   z-index: 1;
   transform: translateY(-50%);
+
+  animation: slide-back 0.2s;
 }
 
 .light #switch button {
-  right: 0;
-  left: initial;
+  animation: slide-in 0.2s forwards;
+}
+
+#switch button:hover {
+  outline: 8px solid var(--highlight-color);
 }
 
 #switch span {
@@ -110,7 +115,7 @@ ul li a {
   display: flex;
   align-items: center;
   justify-content: center;
-  
+
   padding: 16px 24px;
 
   background: var(--surface-color);
@@ -170,5 +175,24 @@ footer {
 
   .light {
     --bg-url: url(./assets/bg-desktop-light.jpg);
+  }
+}
+
+/* animation */
+@keyframes slide-in {
+  from {
+    left: 0;
+  }
+  to {
+    left: 50%;
+  }
+}
+
+@keyframes slide-back {
+  from {
+    left: 50%;
+  }
+  to {
+    left: 0;
   }
 }
